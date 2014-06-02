@@ -3,6 +3,8 @@ import os
 from datetime import datetime
 from PIL import ImageGrab
 
+MSG_TITLE = 'Print Screen'
+
 try:
    userHome = os.path.expanduser('~')
    desktopPath = userHome + '/Desktop/'
@@ -12,10 +14,13 @@ try:
    imgPath = 'screen-%s.png' % dt
    srcPath = os.path.join(desktopPath, 'screen')
    if not os.path.exists(srcPath):
-     os.makedirs(scrPath)
+     os.makedirs(srcPath)
    imgPath = os.path.join(srcPath, imgPath)
    im.save(imgPath,'PNG')
-   print('Saved to: %s' % imgPath)
-   ctypes.windll.user32.MessageBoxA(0, "Stored as: %s" % imgPath, "Print Screen", 0)
+   msg = 'Saved to: %s' % imgPath
+   print(msg)
+   ctypes.windll.user32.MessageBoxA(0, msg, MSG_TITLE, 0)
 except Exception as e:
-   print('Error: %s' % str(e))
+   msg = 'Error: %s' % str(e)
+   print(msg)
+   ctypes.windll.user32.MessageBoxA(0, msg, MSG_TITLE, 0)
