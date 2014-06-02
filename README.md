@@ -15,8 +15,11 @@ c:\Python27\pythonw.exe
 Copy the link to your Desktop and make a "Shortcut Key" from its Properties.
 Default one that I use is Ctrl + Alt + S
 
-Once you execute the script it will save a new screen-shot on your Desktop
-under folder screen\
+Once you execute the script it will save a new screen-shot under 
+...\Desktop\screen\
+
+The util needs Python 2.x and PIL:
+http://www.pythonware.com/products/pil/
 
 Enjoy!
 
